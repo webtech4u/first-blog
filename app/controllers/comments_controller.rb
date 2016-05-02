@@ -7,11 +7,7 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
     redirect_to article_path(@article)
-    if  @comment.empty?[confirm: 'Are you sure?' ]
-      # [comment.article, comment],
-        # method: :create,
-        #  [confirm: 'Are you sure?' ]
-    end
+    
   end
 
   def destroy
